@@ -1,4 +1,4 @@
 configs
 =======
 
-Personal configs
+Configs for different apps.
