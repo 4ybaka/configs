@@ -1,0 +1,19 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"CTags",
+		"FileDiffs",
+		"FileSystem Autocompletion",
+		"Find Function Definiton",
+		"FindKeyConflicts",
+		"Function Name Display",
+		"GenerateUUID",
+		"HexViewer",
+		"Http Requester",
+		"Open Recent Files",
+		"Package Control",
+		"SFTP",
+		"SublimeGDB"
+	]
+}

@@ -1,0 +1,65 @@
+[user]
+    name = Dmitry Nesterov
+    email = 4ybaka@gmail.com
+[core]
+    # TODO: How it work?
+    #whitespace = -indent-with-non-tab, trailing-space
+[alias]
+    # Base commands
+    st = status -s
+    ci = commit
+    br = branch
+    co = checkout
+    ai = add -i
+
+    # Before merge
+    bfm = "!f() { git checkout develop && git pull origin develop; }; f"
+
+    # Diff commands
+    dft = !git difftool -y
+    dfc = !git diff --cached
+
+    # Search commands
+    fhist = !git rev-list --all | xargs git grep
+    ffile = !git ls-files | grep -ii
+
+    # Graph history
+    lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) — %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=short
+
+    # Stash commands
+    sh = stash
+    sp = stash pop
+    sl = stash list
+
+    # Push into current remote branch
+    pcb = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+
+    # Show git commands
+    commands = help -a
+    # Show aliases
+    aliases = !git config -l | grep alias | cut -c 7-
+
+    # Shows number of commits per developer
+    fame = !git shortlog --summary | sort --reverse --numeric-sort
+
+    # Show conflicts
+    conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
+    # Show unmergd files
+    unmerged = !git ls-files --unmerged | cut -f2 | sort -u
+
+    # Assume a file as unchanged
+    assume = !git update-index --assume-unchanged
+    # Unassume a file
+    unassume = !git update-index --no-assume-unchanged
+    # Show assumed files
+    assumed = !git ls-files -v | grep ^h | cut -c 3-
+
+    ls = ls-files
+[color]
+    ui = true
+    diff = true
+    grep = true
+    status = true
+
+[push]
+    default = simple
