@@ -32,8 +32,10 @@
     sp = stash pop
     sl = stash list
 
+    # Gets current branch
+    cb = rev-parse --abbrev-ref HEAD
     # Push into current remote branch
-    pcb = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+    pcb = !git cb | xargs git push origin
 
     # Show git commands
     commands = help -a
