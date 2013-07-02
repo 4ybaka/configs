@@ -5,6 +5,7 @@
     # TODO: How it work?
     #whitespace = -indent-with-non-tab, trailing-space
     editor = vi
+    excludesfile = ~/.gitignore
 [alias]
     # Base commands
     st = status -s
