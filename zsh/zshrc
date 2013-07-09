@@ -13,6 +13,7 @@ autoload -Uz compinit
 compinit
 
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
 
 PROMPT='%n$(git_super_status) %# '
 autoload -U promptinit
