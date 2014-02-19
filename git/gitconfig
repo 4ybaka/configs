@@ -58,6 +58,10 @@
     # Show assumed files
     assumed = !git ls-files -v | grep ^h | cut -c 3-
 
+    # Remove untracked/ignored files. Add '-n' to see what will be deleted.
+    clu = clean -d -f
+    cli = clean -d -f -X
+
     ls = ls-files
 [color]
     ui = true
