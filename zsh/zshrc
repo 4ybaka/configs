@@ -42,3 +42,5 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
 bindkey '^R' history-incremental-search-backward
+bindkey '\e[H' beginning-of-line
+bindkey '\e[F' end-of-line
