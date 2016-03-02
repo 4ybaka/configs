@@ -1,11 +1,12 @@
 [user]
     name = Dmitry Nesterov
     email = 4ybaka@gmail.com
+[credential]
+    helper = cache --timeout=2592000
 [core]
-    # TODO: How it work?
-    #whitespace = -indent-with-non-tab, trailing-space
     editor = vi
     excludesfile = ~/.gitignore
+    autocrlf = true
 [alias]
     # Base commands
     st = status -s
@@ -13,9 +14,6 @@
     br = branch
     co = checkout
     ai = add -i
-
-    # Before merge
-    bfm = "!f() { git checkout develop && git pull origin develop; }; f"
 
     # Diff commands
     dft = !git difftool -y
@@ -28,15 +26,8 @@
     # Graph history
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) — %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=short
 
-    # Stash commands
-    sh = stash
-    sp = stash pop
-    sl = stash list
-
     # Gets current branch
     cb = rev-parse --abbrev-ref HEAD
-    # Push into current remote branch
-    pcb = !git cb | xargs git push origin
 
     # Show git commands
     commands = help -a
